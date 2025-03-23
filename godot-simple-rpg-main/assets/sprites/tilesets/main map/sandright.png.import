@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c82bd5kvsh3qx"
-path="res://.godot/imported/nip.png-5811f1272a6c39b72c50d273cc748ff7.ctex"
+uid="uid://0drylhp00at6"
+path="res://.godot/imported/sandright.png-16817c088a65be8cb29274978fa69cee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/nip.png"
-dest_files=["res://.godot/imported/nip.png-5811f1272a6c39b72c50d273cc748ff7.ctex"]
+source_file="res://assets/sprites/tilesets/main map/sandright.png"
+dest_files=["res://.godot/imported/sandright.png-16817c088a65be8cb29274978fa69cee.ctex"]
 
 [params]
 
