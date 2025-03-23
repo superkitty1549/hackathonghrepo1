@@ -1,5 +1,6 @@
-[gd_resource type="TileSet" load_steps=34 format=3 uid="uid://n1q1yw4t2q60"]
+[gd_resource type="TileSet" load_steps=38 format=3 uid="uid://n1q1yw4t2q60"]
 
+[ext_resource type="Texture2D" uid="uid://dvx1bdwdn6nok" path="res://assets/sprites/tilesets/main map/grasssandcorner1.png" id="1_g8n3q"]
 [ext_resource type="Texture2D" uid="uid://deoqyeme8qfdj" path="res://assets/sprites/tilesets/plains.png" id="2_tv4pa"]
 [ext_resource type="Texture2D" uid="uid://bxenar7xjx43v" path="res://assets/sprites/objects/objects.png" id="4_y6ftj"]
 [ext_resource type="Texture2D" uid="uid://725dqydlos2n" path="res://assets/sprites/tilesets/main map/grasstosanad.png" id="7_uqla6"]
@@ -11,7 +12,18 @@
 [ext_resource type="Texture2D" uid="uid://caxhh1yn4v8i5" path="res://assets/sprites/tilesets/main map/sandsmall.png" id="10_yqrcl"]
 [ext_resource type="Texture2D" uid="uid://cefr0m3m8425p" path="res://assets/sprites/tilesets/main map/grass.jpg" id="11_ol6ym"]
 [ext_resource type="Texture2D" uid="uid://cd4vdnk81k83n" path="res://assets/sprites/tilesets/main map/wateryay.png" id="11_xcxv2"]
+[ext_resource type="Texture2D" uid="uid://d4el22n05qijq" path="res://assets/sprites/tilesets/main map/grassand3ithink.png" id="13_uqla6"]
 [ext_resource type="Texture2D" uid="uid://8k1tgtditn6u" path="res://assets/sprites/tilesets/main map/32x32grass.png" id="14_g8n3q"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqrcl"]
+texture = ExtResource("1_g8n3q")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.51802, -2.06838, 3.0576, -1.5288, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.51802, 3.32738, 3.0576, -1.5288, 3.0576, -8, 3.0576)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.60795, -8, -5.30583, 1.43887, -2.60795, 8, -8, 8, -8, 3.0576)
+1:1/0 = 0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l3h4j"]
 radius = 11.0
@@ -624,6 +636,13 @@ texture = ExtResource("11_ol6ym")
 5:4/0 = 0
 5:5/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tvqo2"]
+texture = ExtResource("13_uqla6")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0q5lh"]
 texture = ExtResource("4_y6ftj")
 5:0/0 = 0
@@ -702,3 +721,5 @@ sources/18 = SubResource("TileSetAtlasSource_qg7by")
 sources/19 = SubResource("TileSetAtlasSource_20ewd")
 sources/20 = SubResource("TileSetAtlasSource_xcxv2")
 sources/22 = SubResource("TileSetAtlasSource_lgcvb")
+sources/0 = SubResource("TileSetAtlasSource_yqrcl")
+sources/6 = SubResource("TileSetAtlasSource_tvqo2")
