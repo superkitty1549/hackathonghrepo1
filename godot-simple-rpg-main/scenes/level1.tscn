@@ -154,22 +154,23 @@ y_sort_enabled = true
 position = Vector2(18, 19)
 
 [node name="Slime" parent="Enemies" instance=ExtResource("6_j1ocw")]
-position = Vector2(591, 663)
+position = Vector2(260, 370)
 
 [node name="Slime2" parent="Enemies" instance=ExtResource("6_j1ocw")]
-position = Vector2(453, 733)
+position = Vector2(326, 403)
 
 [node name="Slime3" parent="Enemies" instance=ExtResource("6_j1ocw")]
-position = Vector2(606, 563)
+position = Vector2(349, 296)
 
 [node name="Slime4" parent="Enemies" instance=ExtResource("6_j1ocw")]
-position = Vector2(674, 623)
+position = Vector2(378, 355)
 
 [node name="Slime5" parent="Enemies" instance=ExtResource("6_j1ocw")]
-position = Vector2(647, 652)
+position = Vector2(449, 307)
 
 [node name="Slime6" parent="Enemies" instance=ExtResource("6_j1ocw")]
-position = Vector2(497, 663)
+visible = false
+position = Vector2(386, 425)
 
 [node name="Slime7" parent="Enemies" instance=ExtResource("6_j1ocw")]
 visible = false

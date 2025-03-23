@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwuhwa5tp1o0j"
-path="res://.godot/imported/slime.png-a3f8ad08e9951dcfc89db77a5b728bd5.ctex"
+uid="uid://btuy10kjmubs5"
+path="res://.godot/imported/darkbiscuits.png-00e80f2c0dbc06974dac54f3639bf5d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/slime.png"
-dest_files=["res://.godot/imported/slime.png-a3f8ad08e9951dcfc89db77a5b728bd5.ctex"]
+source_file="res://assets/sprites/characters/darkbiscuits.png"
+dest_files=["res://.godot/imported/darkbiscuits.png-00e80f2c0dbc06974dac54f3639bf5d6.ctex"]
 
 [params]
 
