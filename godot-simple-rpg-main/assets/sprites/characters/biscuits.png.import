@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djs3it2ja7f1w"
-path="res://.godot/imported/kami3.png-c0641064ed5a669de588d44c8f5af243.ctex"
+uid="uid://b1sbybsqstptr"
+path="res://.godot/imported/biscuits.png-7d0ec350a8733abf47365bd63c3772e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/kami3.png"
-dest_files=["res://.godot/imported/kami3.png-c0641064ed5a669de588d44c8f5af243.ctex"]
+source_file="res://assets/sprites/characters/biscuits.png"
+dest_files=["res://.godot/imported/biscuits.png-7d0ec350a8733abf47365bd63c3772e7.ctex"]
 
 [params]
 

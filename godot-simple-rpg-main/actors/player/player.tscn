@@ -1,7 +1,7 @@
 [gd_scene load_steps=52 format=3 uid="uid://cadl6hjl3d2cy"]
 
-[ext_resource type="Texture2D" uid="uid://dj5fk6vkdvrr2" path="res://assets/sprites/characters/player.png" id="1_4r71g"]
 [ext_resource type="Script" uid="uid://c5epotgcn2im5" path="res://actors/player/player.gd" id="1_22mku"]
+[ext_resource type="Texture2D" uid="uid://djs3it2ja7f1w" path="res://assets/sprites/characters/kami.png" id="2_ssdk0"]
 [ext_resource type="PackedScene" uid="uid://k6axntht1gyu" path="res://actors/components/combat/hitbox.tscn" id="3_fxppv"]
 [ext_resource type="PackedScene" uid="uid://12eagfws4yva" path="res://actors/components/status/health.tscn" id="3_u7rq0"]
 [ext_resource type="PackedScene" uid="uid://b5o1a4ii1yd8d" path="res://actors/components/combat/hurtbox.tscn" id="4_3rkdp"]
@@ -108,6 +108,7 @@ states/Start/position = Vector2(178, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_hbyew")
 states/Walk/position = Vector2(497, 230)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_40mos"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_burvr"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_be5vg"), "Idle", "Attack", SubResource("AnimationNodeStateMachineTransition_tstr0"), "Attack", "Idle", SubResource("AnimationNodeStateMachineTransition_440p8")]
+graph_offset = Vector2(-18.4207, 49.4101)
 
 [sub_resource type="Animation" id="Animation_ccv68"]
 length = 0.001
@@ -693,10 +694,10 @@ anim_tree = NodePath("AnimationTree")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.262781, 1.18726)
-texture = ExtResource("1_4r71g")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_ssdk0")
 offset = Vector2(2.08165e-12, -15)
-hframes = 6
-vframes = 10
+hframes = 4
 region_rect = Rect2(0, 0, 440, 200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
