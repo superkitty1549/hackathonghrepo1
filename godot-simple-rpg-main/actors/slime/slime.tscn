@@ -1,7 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://dkr4o1jd2byx7"]
+[gd_scene load_steps=29 format=3 uid="uid://dkr4o1jd2byx7"]
 
 [ext_resource type="Script" uid="uid://b3uxjatvw7gsi" path="res://actors/slime/slime.gd" id="1_af3cn"]
-[ext_resource type="Texture2D" uid="uid://bwuhwa5tp1o0j" path="res://assets/sprites/characters/slime.png" id="2_tphau"]
+[ext_resource type="Texture2D" uid="uid://c82bd5kvsh3qx" path="res://assets/sprites/characters/nip.png" id="2_odhwe"]
 [ext_resource type="PackedScene" uid="uid://bmixqgia6qee0" path="res://actors/components/detection_area.tscn" id="3_jidwr"]
 [ext_resource type="PackedScene" uid="uid://k6axntht1gyu" path="res://actors/components/combat/hitbox.tscn" id="4_28a0m"]
 [ext_resource type="Resource" uid="uid://b4e15fax57nc0" path="res://actors/slime/hit.tres" id="5_lkw1f"]
@@ -118,8 +118,6 @@ states/Walk/position = Vector2(560, 87)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_dgi6v"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_5u8wo"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_vxnh1")]
 graph_offset = Vector2(-4, 28)
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_y1s54"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_uyxaa"]
 radius = 62.0725
 
@@ -137,9 +135,9 @@ anim_player = NodePath("AnimationPlayer")
 anim_tree = NodePath("AnimationTree")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tphau")
-hframes = 7
-vframes = 5
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_odhwe")
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -148,14 +146,12 @@ shape = SubResource("CircleShape2D_h2ma1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_hhgje")
+&"": SubResource("AnimationLibrary_hhgje")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_8ruhm")
 anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_y1s54")
 
 [node name="DetectionArea" parent="." instance=ExtResource("3_jidwr")]
 
