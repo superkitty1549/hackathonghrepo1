@@ -4,7 +4,7 @@ extends Actor
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var state_machine : StateMachine = $StateMachine
 @onready var tilemap: TileMap = get_parent().find_child("TileMap")  # Finds the TileMap in the scene
-@onready var message_label: Label = get_parent().find_child("MessageLabel")  # Finds the message UI Label
+@onready var message_label: Label = get_tree().get_first_node_in_group("message_ui")  # Finds the message UI Label
 
 var afraid_of_water = true  # If true, player will not enter water
 
@@ -33,15 +33,14 @@ func _physics_process(delta: float) -> void:
 func is_touching_water() -> bool:
 	if not tilemap:
 		return false
-	
-	# Get the player's position in the tilemap grid
 	var tile_pos = tilemap.local_to_map(global_position)
-	
-	# Get the tile data at that position on Physics Layer 0
-	var tile_data = tilemap.get_cell_tile_data(0, tile_pos)  # 0 = Physics Layer 0
-	
-	# Check if there is a collision (tile_data exists)
-	return tile_data != null
+	var tile_data = tilemap.get_cell_tile_data(1, tile_pos)  # Adjust layer if necessary
+	if tile_data == null:
+		return false
+
+	# Check if the tile has a specific terrain tag or custom data
+	return tile_data.get_custom_data("is_water") == true  # Set this in the TileSet editor
+
 
 func show_message(text: String):
 	if message_label:
