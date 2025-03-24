@@ -14,14 +14,17 @@ func _on_animation_state_ready():
 	state_machine.change_state("Idle", {"actor": self}) #Now initialize the state machine to Idle safely.
 
 
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
 		state_machine.change_state("Attack", {"actor": self})
 
 
+
 func get_direction() -> Vector2:
 	return Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 func _physics_process(delta: float) -> void:
 	if is_alive:
@@ -57,6 +60,8 @@ func show_message(text: String):
 func hide_message():
 	if message_label:
 		message_label.visible = false
+=======
+>>>>>>> parent of 90888e5 (um i did something for touching the water and it didn tbreak but didnt work)
 =======
 >>>>>>> parent of 90888e5 (um i did something for touching the water and it didn tbreak but didnt work)
 
