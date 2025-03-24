@@ -1,12 +1,10 @@
 class_name Player
 extends Actor
 
+
 @onready var sprite : Sprite2D = $Sprite2D
 @onready var state_machine : StateMachine = $StateMachine
-@onready var tilemap: TileMap = get_parent().find_child("TileMap")  # Finds the TileMap in the scene
-@onready var message_label: Label = get_parent().find_child("MessageLabel")  # Finds the message UI Label
 
-var afraid_of_water = true  # If true, player will not enter water
 
 func _ready() -> void:
 	anim_tree.active = true
@@ -15,13 +13,16 @@ func _ready() -> void:
 func _on_animation_state_ready():
 	state_machine.change_state("Idle", {"actor": self}) #Now initialize the state machine to Idle safely.
 
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
 		state_machine.change_state("Attack", {"actor": self})
 
+
 func get_direction() -> Vector2:
 	return Input.get_vector("move_left", "move_right", "move_up", "move_down")
 
+<<<<<<< HEAD
 func _physics_process(delta: float) -> void:
 	if is_alive:
 		var direction = get_direction()
@@ -56,9 +57,12 @@ func show_message(text: String):
 func hide_message():
 	if message_label:
 		message_label.visible = false
+=======
+>>>>>>> parent of 90888e5 (um i did something for touching the water and it didn tbreak but didnt work)
 
 func _on_health_health_depleted() -> void:
 	is_alive = false
+	# TODO How can I use anim_state here?
 	anim_tree.active = false
 	anim_player.play("death")
 	await anim_player.animation_finished

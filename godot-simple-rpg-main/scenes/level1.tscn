@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d1gou8vmotl2p" path="res://objects/others/chest.tscn" id="11_cmu0b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xiugp"]
-size = Vector2(14, 12)
+size = Vector2(112, 45.5)
 
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
@@ -185,14 +185,8 @@ destination = "res://scenes/level2.tscn"
 spawn_point = NodePath("SpawnPoint")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/SouthScenePortal"]
-position = Vector2(1, -2)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_xiugp")
 
 [node name="SpawnPoint" type="Marker2D" parent="Portals/SouthScenePortal"]
-position = Vector2(2, -17)
-
-[node name="MessageLabel" type="Label" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-text = "im too afraid to go into the water by myself rn..."
+position = Vector2(1, -42)
