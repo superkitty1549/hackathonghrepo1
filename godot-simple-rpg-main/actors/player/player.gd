@@ -10,10 +10,14 @@ var afraid_of_water = true  # If true, player will not enter water
 
 func _ready() -> void:
 	anim_tree.active = true
+	animation_state_ready.connect(_on_animation_state_ready) # Connect the signal from the Actor class to _on_animation_state_ready()
+
+func _on_animation_state_ready():
+	state_machine.change_state("Idle", {"actor": self}) #Now initialize the state machine to Idle safely.
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("attack"):
-		state_machine.change_state("Attack")
+		state_machine.change_state("Attack", {"actor": self})
 
 func get_direction() -> Vector2:
 	return Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -23,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		var direction = get_direction()
 		velocity = direction * 100  # Adjust speed as needed
 		move_and_slide()
-		
+
 		# Check if player is touching water
 		if afraid_of_water and is_touching_water():
 			show_message("I'm too afraid to go into the water right now...")
