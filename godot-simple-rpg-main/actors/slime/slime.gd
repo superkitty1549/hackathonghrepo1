@@ -12,44 +12,49 @@ var sprite_map = {
 	preload("res://assets/sprites/characters/darklamber.png"): preload("res://assets/sprites/characters/lamber.png"),
 }
 
-# Keep track of assigned sprites
-static var assigned_sprites = []  
+# Static dictionary to store each slime's state across levels
+static var slime_data = {}  # Stores both texture and transformation state
 
-# If the slime is transformed
 var is_transformed = false
-var player_nearby = false  # Tracks if the player is close enough to interact
+var player_nearby = false  
+var slime_id = ""
 
 func _ready():
-	# Assign a unique spritesheet to each slime
-	for texture in sprite_map.keys():
-		if texture not in assigned_sprites:
-			sprite.texture = texture
-			assigned_sprites.append(texture)
-			break  # Stop once we find an unused texture
+	# Create a unique ID based on position
+	slime_id = str(global_position.x) + "_" + str(global_position.y)
+
+	# Restore saved slime state if available
+	if slime_id in slime_data:
+		var saved_data = slime_data[slime_id]
+		sprite.texture = saved_data["texture"]
+		is_transformed = saved_data["transformed"]
+	else:
+		# Assign a random dark version if not previously assigned
+		var available_textures = sprite_map.keys()  # Only dark versions
+		var new_texture = available_textures[randi() % available_textures.size()]
+		sprite.texture = new_texture
+		slime_data[slime_id] = {"texture": new_texture, "transformed": false}
 
 func _on_health_health_depleted() -> void:
 	if not is_transformed:
-		is_transformed = true  # Mark as transformed
+		is_transformed = true  
 		if sprite.texture in sprite_map:
-			sprite.texture = sprite_map[sprite.texture]  # Swap to normal version
+			sprite.texture = sprite_map[sprite.texture]  # Transform to normal version
+			slime_data[slime_id] = {"texture": sprite.texture, "transformed": true}  # Save state
 	else:
-		queue_free()  # If already transformed, remove it (optional)
+		queue_free()  # Remove after second hit (optional)
 
-# Detect player entering interaction zone
 func _on_detection_area_body_entered(body):
 	if body.name == "Player":
 		player_nearby = true
 
-# Detect player leaving interaction zone
 func _on_detection_area_body_exited(body):
 	if body.name == "Player":
 		player_nearby = false
 
-# Handle interaction when pressing "E"
 func _input(event):
 	if event.is_action_pressed("interact") and player_nearby:
 		go_to_next_level()
 
-# Move to level2 with the player
 func go_to_next_level():
 	get_tree().change_scene_to_file("res://scenes/level2.tscn")
