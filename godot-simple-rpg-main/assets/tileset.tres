@@ -22,7 +22,7 @@ texture = ExtResource("1_g8n3q")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.51802, 3.32738, 3.0576, -1.5288, 3.0576, -8, 3.0576)
 0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.60795, -8, -5.30583, 1.43887, -2.60795, 8, -8, 8, -8, 3.0576)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 2.51802, 3.32738, 3.0576, -1.5288, 3.0576, -8, 3.0576)
 1:1/0 = 0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l3h4j"]
